@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+});
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::match(["GET", "POST"], "/register", function () {
+    return redirect("/login");
+})->name("register");
+
+Route::get('/test-me', function () {
+    return \Auth::user();
+});
+
+Route::get('/test-forbidden', function () {
+    abort(403, "Anda tidak memiliki hak akses");
 });
