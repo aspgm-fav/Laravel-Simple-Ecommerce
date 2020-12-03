@@ -18,11 +18,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
-
-Route::match(["GET", "POST"], "/register", function(){
-    return redirect("/login");
-})->name("register");
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
