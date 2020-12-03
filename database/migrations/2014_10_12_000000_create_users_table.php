@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('avatar')->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE']);
+            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->rememberToken();
             $table->timestamps();
         });

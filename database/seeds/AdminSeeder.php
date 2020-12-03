@@ -13,11 +13,11 @@ class AdminSeeder extends Seeder
     public function run()
     {
         User::create([
-            'username' = "administrator",
-            'name' = "admin",
-            'email' = "admin@admin.com",
-            'roles' = json_encode(["ADMIN"]),
-            'password' = \Hash::make("pussycats")
+            'username' => "administrator",
+            'name' => "admin",
+            'email' => "admin@admin.com",
+            'roles' => json_encode(["ADMIN"]),
+            'password' => \Hash::make("pussycats")
         ]);
     }
 }
