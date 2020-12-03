@@ -96,11 +96,11 @@
                         <td>{{ $book->stock }}</td>
                         <td>{{ $book->price }}</td>
                         <td>
-                            <a href="{{ route('books.edit', ['id' => $book->id]) }}"
+                            <a href="{{ route('books.edit', $book->id) }}"
                                 class="btn btn-info btn-sm"> Edit </a>
 
                             <form method="POST" class="d-inline" onsubmit="return confirm('Move book to trash?')"
-                                action="{{ route('books.destroy', ['id' => $book->id ]) }}">
+                                action="{{ route('books.destroy', $book->id) }}">
 
                                 @csrf
                                 <input type="hidden" value="DELETE" name="_method">

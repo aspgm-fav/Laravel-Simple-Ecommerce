@@ -78,14 +78,14 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('categories.edit', ['id' => $category->id]) }}"
+                                <a href="{{ route('categories.edit', $category->id) }}"
                                     class="btn btn-info btn-sm"> Edit </a>
 
-                                <a href="{{ route('categories.show', ['id' => $category->id]) }}"
+                                <a href="{{ route('categories.show', $category->id) }}"
                                     class="btn btn-primary btn-sm"> Show </a>
 
                                 <form class="d-inline"
-                                    action="{{ route('categories.destroy', ['id' => $category->id]) }}"
+                                    action="{{ route('categories.destroy', $category->id) }}"
                                     method="POST" onsubmit="return confirm('Move category to trash?')">
 
                                     @csrf
